@@ -13,6 +13,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        lato: "'Lato', sans-serif",
+        nunito: "'Nunito', sans-serif",
+        figtree: "'Figtree', sans-serif",
+        montserrat: "'Montserrat', sans-serif",
+      },
+      colors: {
+        primaryBackground: "#F8FAFF",
+        primary: "#605BFF",
+        secondaryText: "#858585",
+        link: "#346BD4",
+        sidebar: "#030229",
+        trunks: "#999CA0",
+      },
     },
   },
   plugins: [],
