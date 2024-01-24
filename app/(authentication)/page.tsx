@@ -69,7 +69,9 @@ export default function Login() {
         </div>
         <div className="hidden md:flex items-center max-w-[42%] justify-start gap-x-4 container">
           {socials.map((data, i) => (
-            <Link href="#">{data.icon}</Link>
+            <Link key={i} href="#">
+              {data.icon}
+            </Link>
           ))}
         </div>
       </div>
