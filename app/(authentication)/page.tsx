@@ -10,6 +10,7 @@ import {
 } from "@/public/icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const socials = [
@@ -43,6 +44,13 @@ const socialsMobile = [
 ];
 
 export default function Login() {
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    alert("Redirecting you to dashboard");
+    router.push("/dashboard");
+  };
+
   return (
     <section className="min-h-screen flex flex-col md:flex-row">
       <div className="w-full min-h-[80px] md:py-5 md:flex-[0.5] md:flex md:flex-col md:justify-between bg-primary md:bg-transparent md:bg-[url('/images/left-wing.svg')] bg-center bg-cover bg-no-repeat">
@@ -96,7 +104,9 @@ export default function Login() {
           </div>
 
           <div className="bg-white rounded-lg">
-            <form className="container py-7">
+            <div className="container py-7">
+              {" "}
+              {/* <-- this div can be changed to form when working with login */}
               <div className="w-full">
                 <p className="text-base font-lato font-normal">Email address</p>
                 <input
@@ -105,7 +115,6 @@ export default function Login() {
                   className="w-full mt-2"
                 />
               </div>
-
               <div className="w-full mt-4">
                 <p className="text-base font-lato font-normal">Password</p>
                 <input
@@ -114,7 +123,6 @@ export default function Login() {
                   className="w-full mt-2"
                 />
               </div>
-
               <div className="mt-4 flex flex-col">
                 <Link
                   href="#"
@@ -123,11 +131,14 @@ export default function Login() {
                   Forgot password ?
                 </Link>
 
-                <button className="w-full mt-4 bg-primary font-montserrat font-bold text-base text-white">
+                <button
+                  onClick={handleSubmit}
+                  className="w-full mt-4 bg-primary font-montserrat font-bold text-base text-white"
+                >
                   Sign in
                 </button>
               </div>
-            </form>
+            </div>
           </div>
 
           <div className="mt-4 flex flex-col md:flex-row md:gap-x-1 items-center justify-center gap-y-3">

@@ -12,3 +12,4 @@ export { Menu } from "./menu";
 export { Discord, Github, Linkedin, Twitter } from "./socials";
 export { Google } from "./google";
 export { Apple } from "./apple";
+export { Upload, UploadDashboardButton } from "./upload";

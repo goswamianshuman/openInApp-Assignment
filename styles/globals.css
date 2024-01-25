@@ -16,10 +16,40 @@
   button {
     @apply bg-white py-2 px-3 rounded-lg text-[10px] min-h-[32.93px] font-montserrat text-secondaryText;
   }
+
+  table {
+    @apply bg-[#F5F5F5] rounded-lg w-max md:w-full;
+  }
+
+  th {
+    @apply font-figtree font-semibold text-sm text-black py-3 px-4 text-start;
+  }
+
+  td {
+    @apply px-0 font-figtree font-normal text-sm text-black;
+  }
+
+  td > div {
+    @apply bg-white mt-3 py-4 px-4 w-full;
+  }
+
+  tr:last-child > td > div {
+    @apply mb-3;
+  }
 }
 
 @layer components {
   .container {
     @apply w-full max-w-[90%] mx-auto;
   }
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
