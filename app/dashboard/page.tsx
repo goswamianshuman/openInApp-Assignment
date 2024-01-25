@@ -1,36 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import UploadCard from "./_components/upload";
 import UploadTable from "./_components/uploadTable";
 
 type Props = {};
 
 const Dashboard = (props: Props) => {
-  const tableData = [
-    {
-      siNo: 1,
-      links: "http://example.com",
-      prefix: "ABC",
-      addTags: "Tag1, Tag2",
-      selectedTags: "Tag1",
-    },
-    {
-      siNo: 2,
-      links: "http://another-example.com",
-      prefix: "XYZ",
-      addTags: "Tag3, Tag4",
-      selectedTags: "Tag4",
-    },
-    {
-      siNo: 3,
-      links: "http://another-example.com",
-      prefix: "XYZ",
-      addTags: "Tag3, Tag4",
-      selectedTags: "Tag4",
-    },
-    // Add more rows as needed
-  ];
+  const [tableData, setTableData] = useState<any>([]);
 
   return (
     <div className="container mt-7">
@@ -38,9 +15,16 @@ const Dashboard = (props: Props) => {
         Upload CSV
       </h4>
 
-      <UploadCard />
+      <UploadCard tableData={tableData} setTableData={setTableData} />
 
-      <UploadTable tableData={tableData} />
+      {tableData.length !== 0 && (
+        <div className="my-10">
+          <p className="text-base font-bold font-nunito md:text-2xl md:font-figtree md:font-semibold ">
+            Uploads
+          </p>
+          <UploadTable tableData={tableData} />
+        </div>
+      )}
     </div>
   );
 };

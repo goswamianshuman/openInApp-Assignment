@@ -1,13 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
-  tags?: string[];
+  data: string;
 };
 
-const Popover = (props: Props) => {
+const Popover = ({ data }: Props) => {
   const [active, setActive] = useState(false);
+  const [tags, setTags] = useState([]);
+
+  function stringToArray(inputString: string) {
+    const trimmedString = inputString.trim();
+
+    if (trimmedString) {
+      const arrayResult = trimmedString.split(",").map((tag) => tag.trim());
+
+      return arrayResult;
+    }
+    return [];
+  }
+
+  useEffect(() => {
+    const newData = stringToArray(data);
+    setTags(newData as []);
+  });
 
   return (
     <div className="w-[150px] h-[32px] relative rounded-lg border-[1.5px]">
@@ -28,9 +45,9 @@ const Popover = (props: Props) => {
 
       {active && (
         <div
-          className={`absolute bg-white w-[150px] p-2 max-h-[205px] shadow-md shadow-black/5 rounded-lg border-[1.5px] mt-2 overflow-y-auto hideScrollbar`}
+          className={`absolute z-[99999] bg-white w-[150px] p-2 max-h-[205px] shadow-md shadow-black/5 rounded-lg border-[1.5px] mt-2 overflow-y-auto hideScrollbar`}
         >
-          {props.tags?.map((data, i) => (
+          {tags?.map((data, i) => (
             <div
               key={i}
               role="button"

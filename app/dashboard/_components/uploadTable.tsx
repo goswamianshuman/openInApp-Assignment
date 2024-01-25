@@ -19,11 +19,7 @@ const UploadTable = (props: Props) => {
   const { tableData } = props;
 
   return (
-    <div className="my-10 overflow-x-auto hideScrollbar">
-      <p className="text-base font-bold font-nunito md:text-2xl md:font-figtree md:font-semibold ">
-        Uploads
-      </p>
-
+    <div className="overflow-x-auto hideScrollbar">
       <table className="mt-7">
         <thead>
           <tr>
@@ -35,8 +31,8 @@ const UploadTable = (props: Props) => {
           </tr>
         </thead>
         <tbody>
-          {tableData?.map((row, index) => (
-            <tr key={index}>
+          {tableData?.map((row) => (
+            <tr key={row.siNo}>
               <td>
                 <div className="max-w-[80%] ml-auto rounded-tl-lg rounded-bl-lg">
                   {row.siNo}
@@ -58,7 +54,7 @@ const UploadTable = (props: Props) => {
               </td>
               <td>
                 <div className="py-[10px]">
-                  <Popover />
+                  <Popover data={row.addTags} />
                 </div>
               </td>
               <td>
