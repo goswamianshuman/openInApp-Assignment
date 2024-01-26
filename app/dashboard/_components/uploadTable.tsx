@@ -92,11 +92,7 @@ const UploadTable = (props: Props) => {
               </td>
               <td>
                 <div
-                  className={`max-w-[94%] mr-auto ${
-                    selectedTagsByRow[row.siNo.toString()]
-                      ? "py-3"
-                      : "py-[26px]"
-                  } rounded-tr-lg rounded-br-lg flex items-center gap-x-2`}
+                  className={`max-w-[94%] mr-auto rounded-tr-lg rounded-br-lg flex items-center gap-x-2`}
                 >
                   {selectedTagsByRow[row.siNo.toString()] &&
                     selectedTagsByRow[row.siNo.toString()].map((tag) => (

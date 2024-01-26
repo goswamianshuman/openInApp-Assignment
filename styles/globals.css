@@ -30,7 +30,7 @@
   }
 
   td > div {
-    @apply bg-white mt-3 py-4 px-4 w-full;
+    @apply bg-white mt-3 flex items-center px-4 w-full min-h-[58px];
   }
 
   tr:last-child > td > div {

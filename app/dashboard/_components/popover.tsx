@@ -46,7 +46,7 @@ const Popover = ({ data, onSelect }: Props) => {
 
       {active && (
         <div
-          className={`absolute top-full z-[99999] bg-white w-[150px] p-2 max-h-[205px] shadow-md shadow-black/5 rounded-lg border-[1.5px] mt-2 overflow-y-auto hideScrollbar`}
+          className={`absolute top-full z-[99999] bg-white w-full p-2 max-h-[205px] shadow-md shadow-black/5 rounded-lg border-[1.5px] mt-2 overflow-y-auto hideScrollbar`}
         >
           {tags?.map((data, i) => (
             <div
