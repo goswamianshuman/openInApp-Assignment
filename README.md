@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Live Demonstration : https://assignment-openinapp.vercel.app/
 
-## Getting Started
+### Here is a Quick Demonstration through a video 📹 
+#### https://www.loom.com/share/b4915ac45a6e47cc90fcd73559cd4a21?sid=2a775219-11f0-4539-b1f8-587bd4428c64
 
-First, run the development server:
+#### Quick screen-shots 📸: 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##### login page
+![image](https://github.com/goswamianshuman/openInApp-Assignment/assets/68741416/15198e45-1bcb-4e09-9b06-800a6953cc05)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##### dashboard
+![image](https://github.com/goswamianshuman/openInApp-Assignment/assets/68741416/1c349774-e8fe-477d-abf3-b683f8499d40)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+##### upload file
+![image](https://github.com/goswamianshuman/openInApp-Assignment/assets/68741416/4d5f0327-85a0-438e-910c-54db10ff4f2a)
 
-## Learn More
+![image](https://github.com/goswamianshuman/openInApp-Assignment/assets/68741416/103ed06a-5bec-445b-b966-11ec79d9c03c)
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://github.com/goswamianshuman/openInApp-Assignment/assets/68741416/547c70e7-e518-4384-9ae7-437d6fea86eb)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/goswamianshuman/openInApp-Assignment/assets/68741416/fc07ed71-9439-4d47-9509-118d07ffa17b)
