@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 
 type Props = {
   data: string;
+  onSelect: (tag: string) => void;
 };
 
-const Popover = ({ data }: Props) => {
+const Popover = ({ data, onSelect }: Props) => {
   const [active, setActive] = useState(false);
   const [tags, setTags] = useState([]);
 
@@ -24,7 +25,7 @@ const Popover = ({ data }: Props) => {
   useEffect(() => {
     const newData = stringToArray(data);
     setTags(newData as []);
-  });
+  }, [data]);
 
   return (
     <div className="w-[150px] h-[32px] relative rounded-lg border-[1.5px]">
@@ -51,6 +52,7 @@ const Popover = ({ data }: Props) => {
             <div
               key={i}
               role="button"
+              onClick={() => onSelect(data)}
               className="py-2 px-2 rounded-lg text-black hover:bg-[#F5F5F5] active:bg-[#F5F5F5] transition-all ease-linear duration-200 flex items-center font-figtree font-normal text-sm"
             >
               {data}

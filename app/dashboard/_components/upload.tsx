@@ -136,7 +136,7 @@ const UploadCard = ({ tableData, setTableData }: Props) => {
 
       <button
         onClick={handleConversion}
-        disabled={!file}
+        disabled={!file || tableData?.length !== 0}
         className={` ${
           tableData?.length !== 0 ? "bg-primary/50" : "bg-primary"
         } disabled:cursor-not-allowed text-white mt-4 w-full flex items-center justify-center gap-x-3 font-figtree font-semibold text-sm`}

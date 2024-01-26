@@ -22,7 +22,7 @@ export default function RootLayout({
     <main className="flex relative">
       <MobileSidebar />
       <Sidebar />
-      <div className="flex flex-col flex-grow h-screen relative overflow-y-scroll">
+      <div className="flex flex-col flex-grow h-screen relative overflow-y-auto">
         <Navbar />
         <div className="flex-grow">{children}</div>
       </div>

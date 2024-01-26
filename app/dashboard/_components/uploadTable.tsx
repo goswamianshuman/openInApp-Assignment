@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Tag from "./tag";
 import Popover from "./popover";
 
@@ -17,6 +17,34 @@ type Props = {
 
 const UploadTable = (props: Props) => {
   const { tableData } = props;
+
+  const [selectedTagsByRow, setSelectedTagsByRow] = useState<{
+    [key: string]: string[];
+  }>({});
+
+  const handleTagSelect = (tag: string, rowKey: string) => {
+    // Check if the tag is already selected
+    if (
+      !selectedTagsByRow[rowKey] ||
+      !selectedTagsByRow[rowKey].includes(tag)
+    ) {
+      // Update the state with the selected tag for the specific row
+      setSelectedTagsByRow((prevTags) => ({
+        ...prevTags,
+        [rowKey]: [...(prevTags[rowKey] || []), tag],
+      }));
+    }
+  };
+
+  const handleTagRemove = (tag: string, rowKey: string) => {
+    // Remove the tag from the selected tags for the specific row
+    setSelectedTagsByRow((prevTags) => ({
+      ...prevTags,
+      [rowKey]: (prevTags[rowKey] || []).filter((t) => t !== tag),
+    }));
+  };
+
+  console.log();
 
   return (
     <div className="overflow-x-auto hideScrollbar">
@@ -54,12 +82,35 @@ const UploadTable = (props: Props) => {
               </td>
               <td>
                 <div className="py-[10px]">
-                  <Popover data={row.addTags} />
+                  <Popover
+                    onSelect={(tag) =>
+                      handleTagSelect(tag, row.siNo.toString())
+                    }
+                    data={row.addTags}
+                  />
                 </div>
               </td>
               <td>
-                <div className="max-w-[94%] mr-auto py-3 rounded-tr-lg rounded-br-lg">
-                  <Tag label={row.selectedTags} />
+                <div
+                  className={`max-w-[94%] mr-auto ${
+                    selectedTagsByRow[row.siNo.toString()]
+                      ? "py-3"
+                      : "py-[26px]"
+                  } rounded-tr-lg rounded-br-lg flex items-center gap-x-2`}
+                >
+                  {selectedTagsByRow[row.siNo.toString()] &&
+                    selectedTagsByRow[row.siNo.toString()].map((tag) => (
+                      <Tag
+                        onRemove={() =>
+                          handleTagRemove(tag, row.siNo.toString())
+                        }
+                        key={tag}
+                        label={tag}
+                      />
+                    ))}
+                  {selectedTagsByRow[row.siNo.toString()]?.length === 0 && (
+                    <div className="py-[14px]" />
+                  )}
                 </div>
               </td>
             </tr>
