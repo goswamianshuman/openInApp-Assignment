@@ -28,7 +28,7 @@ const Popover = ({ data, onSelect }: Props) => {
   }, [data]);
 
   return (
-    <div className="w-[150px] h-[32px] relative rounded-lg border-[1.5px]">
+    <div className="min-w-[150px] max-w-max h-[32px] relative rounded-lg border-[1.5px]">
       <div className="h-full w-full px-4 flex items-center justify-center gap-x-4">
         <p className="font-figtree font-normal text-sm text-black">
           Select Tags
