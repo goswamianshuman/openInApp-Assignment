@@ -1,14 +1,16 @@
 "use client";
 
+import React from "react";
 import { useShow } from "@/libs/hooks/useShow";
 import { BellOutline, DashboardLogo, Menu } from "@/public/icons";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
   const { setShow } = useShow();
+  const router = useRouter();
 
   return (
     <header className="py-5">
@@ -26,7 +28,11 @@ const Navbar = (props: Props) => {
         </h4>
         <div className="flex items-center gap-x-4">
           <BellOutline />
-          <div className="h-6 w-6 relative rounded-full overflow-hidden">
+          <div
+            role="button"
+            onClick={() => router.push("/")}
+            className="h-6 w-6 relative rounded-full overflow-hidden"
+          >
             <Image
               className="object-center object-cover"
               fill
